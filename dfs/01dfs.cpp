@@ -9,6 +9,7 @@ vector<int> e[N];
     多次触碰同一节点的状态空间
     深搜计算：自定向下：(父算子1,2)
     自底向上：(子算父，3,4)
+    入下回离都是都是在当前节点的状态空间完成计算。
 
 测试数据：
 8 7 
@@ -63,14 +64,14 @@ void trace(vector<int>e[],int n){
 }
 
 void dfs(int u, int fa){
-    printf("入 %d\n",u); // 1
+    printf("入 %d\n",u); // 1第一次进入点u的状态空间
     for(auto v:e[u]){
         if(v == fa) continue;
-        printf("下%d\n",u); // 2
+        printf("下%d\n",u); // 2，进入点u的后继，向下遍历
         dfs(v,u);
-        printf("回 %d\n",u); // 3
+        printf("回 %d\n",u); // 3,回到u点状态空间
     }
-    printf("离 %d\n",u);
+    printf("离 %d\n",u);// 离开u点状态空间
 }
 
 int main(){

@@ -1,9 +1,16 @@
 #include <iostream>
 #include <stdlib.h>
-
+ 
 /*
-    题目描述：https://www.luogu.com.cn/problem/P1605
-    使用回溯法解决迷宫中从起点到终点的方案总数
+    带恢复现场的DFS又称为回溯算法，一个节点可以反复搜索多次
+    主要用途就是搜索方案数。
+
+    算法流程：
+        如果到达终点，更新答案，回退
+        如果未到达终点，枚举可走路径
+            锁定现场
+            dfs(下一个节点)
+            恢复现场
 */
 
 using namespace std;
@@ -20,7 +27,8 @@ void dfs(int x,int y){
     }
     for(int i = 0; i < 4; i++){
         int a = x + dx[i], b = y + dy[i];
-        if(a < 1 || a > n || b < 1 || b > m || g[a][b]) continue;
+        if(a < 1 || a > n || b < 1 || b > m) continue;
+        if(g[a][b]) continue;
         g[a][b] = 1;
         dfs(a,b);
         g[a][b] = 0;
