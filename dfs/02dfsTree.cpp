@@ -28,11 +28,12 @@ bool vis[N];// 判重数组
 1 -> 4
 */
 
+// 打印对图深搜生成的DFS树
 void dfs(int u){
-    vis[u] = true;
+    vis[u] = true; // 标记访问过，防止再次访问
     for(auto v: e[u]){
         if(vis[v])  continue; // 如果遍历过了，就跳过
-        printf("%d -> %d\n",u,v); // 从u到v
+        printf("%d -> %d\n",u,v); // 从u到v打印，此时在u的状态空间里。
         dfs(v);
     }
 }

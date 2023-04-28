@@ -5,7 +5,8 @@ unordered_map<string, int> dist;
 queue<string>q;
 int dx[4] = {-1,0,1,0}, dy[4] = {0,1,0,-1};
 /*
-    八数码难题：题目描述：https://www.acwing.com/problem/content/847/
+    题目描述：[八数码难题](https://www.acwing.com/problem/content/847/)
+    
     较好的题解：https://www.acwing.com/solution/content/15149/
     思路：一个布局对应一个字符串，对应一个状态点，从一个布局变到另一个布局就对应走过一条边，从初始状态走到最终状态
     计算最少的步数就是BFS问题。

@@ -9,6 +9,8 @@ int n,m,ans;
 queue<pair<int,int>>q;
 
 /*
+    题目描述：[水坑计数](https://www.luogu.com.cn/user/692364#practice)
+    
     判断 “连通性” 和统计 “连通块个数” 的问题 统称 “洪水覆盖” 问题。
     用 DFS 和 BFS 均可解决
     注意判重， 避免死循环。
