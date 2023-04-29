@@ -47,7 +47,7 @@ int main(){
         }
         if(ans < f[i]){
             ans = f[i];
-            pos = i;
+            pos = i; // 记录最长上升子序列最后一个元素位置
         }
     }
     cout << "ans = " << ans << endl;
