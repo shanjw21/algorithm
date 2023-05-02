@@ -75,6 +75,10 @@ void getLCS(){
         }
         else    i--; // 上边转移来的
     }
+    // 输出最长子序列
+    for(i = 1; i <= f[m][n]; i++)
+        printf("%c ",s[i]);
+    printf("\n");
 
 }
 
