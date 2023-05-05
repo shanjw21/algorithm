@@ -4,11 +4,11 @@ using namespace std;
 const int N = 110;
 // 出边数组e[N]表示节点N的所有出边组成的数组。
 vector<int> e[N];
-int next[N];
+int ne[N];
 /*
     触碰节点的时机：1、入， 2、下， 3、回， 4、离
     多次触碰同一节点的状态空间
-    深搜计算：自定向下：(父算子1,2)
+    深搜计算：自顶向下：(父算子1,2)
     自底向上：(子算父，3,4)
     入下回离都是都是在当前节点的状态空间完成计算。
 
@@ -78,7 +78,7 @@ void Binary_travel(int u){
 // 一条链表的触碰点时机：入、离
 void dfs(int u){
     // printf("入%d\n",u);
-    dfs(next[u]);
+    dfs(ne[u]);
     // printf("离%d\n",u);
 
 }

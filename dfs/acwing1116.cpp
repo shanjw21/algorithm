@@ -25,7 +25,7 @@ void dfs(int x, int y, int cnt){
         int a = x + dx[i], b = y + dy[i];
         if(a < 0 || a >= n || b < 0 || b >= m)  continue;
         if(g[a][b]) continue;
-        g[a][b] = 1;
+        g[a][b] = 1;// 锁定现场
         dfs(a,b,cnt+1);
         g[a][b] = 0; // 回溯，恢复现场
     }
